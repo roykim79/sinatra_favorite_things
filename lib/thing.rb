@@ -1,10 +1,11 @@
 class Thing
   @@things = []
 
-  attr_accessor :name
+  attr_accessor :name, :ranking
 
-  def initialize(name)
+  def initialize(name, ranking = 9)
     @name = name
+    @ranking = ranking
   end
 
   def self.all()
