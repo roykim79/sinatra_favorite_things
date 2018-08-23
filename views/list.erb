@@ -1,1 +1,16 @@
 <h1>Some of my favorite things</h1>
+
+<ul class="list-group">
+  <% @things.each do |thing| %>
+    <li class="list-group-item"><%= thing.name %></li>
+  <% end %>
+</ul>
+
+<form class="form" action="/" method="post">
+  <div class="form-group">
+    <label for="thing">Favorite thing</label>
+    <input class="form-control" type="text" name="thing" value="">
+  </div>
+  <button class="btn btn-primary" type="submit" name="button">Add</button>
+
+</form>
