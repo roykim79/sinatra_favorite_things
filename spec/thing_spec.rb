@@ -7,4 +7,12 @@ describe 'Thing' do
       expect(Thing.all()).to eq([])
     end
   end
+
+  describe '#save' do
+    it 'saves a thing to things list' do
+      thing = Thing.new('Foo')
+      thing.save()
+      expect(Thing.all()).to eq([thing])
+    end
+  end
 end
