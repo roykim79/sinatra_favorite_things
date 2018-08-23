@@ -2,7 +2,7 @@
 
 <ul class="list-group">
   <% @things.each do |thing| %>
-    <li class="list-group-item"><%= thing.name %></li>
+    <li class="list-group-item"><%= thing.name %> / <%= thing.ranking %></li>
   <% end %>
 </ul>
 
@@ -10,6 +10,10 @@
   <div class="form-group">
     <label for="thing">Favorite thing</label>
     <input class="form-control" type="text" name="thing" value="">
+  </div>
+  <div class="form-group">
+    <label for="ranking">Ranking</label>
+    <input class="form-control" type="text" name="ranking" value="">
   </div>
   <button class="btn btn-primary" type="submit" name="button">Add</button>
 </form>

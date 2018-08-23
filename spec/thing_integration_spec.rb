@@ -17,7 +17,8 @@ describe 'the favorite things path', :type => :feature do
   it 'will display the new list item after submiting it' do
     visit '/'
     fill_in 'thing', :with => 'foo'
+    fill_in 'ranking', :with => '2'
     click_button 'Add'
-    expect(page).to have_content 'foo'
+    expect(page).to have_content 'foo / 2'
   end
 end

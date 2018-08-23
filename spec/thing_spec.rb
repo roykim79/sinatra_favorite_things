@@ -21,6 +21,17 @@ describe 'Thing' do
     end
   end
 
+  describe '.sort' do
+    it 'sorts the things starting with the lowest ranking' do
+      thing = Thing.new('foo', 2)
+      thing.save()
+      thing1 = Thing.new('bar', 1)
+      thing1.save()
+      Thing.sort()
+      expect(Thing.all()[0].ranking).to eq(1)
+    end
+  end
+
   describe '#name' do
     it 'returns the name of the thing' do
       thing = Thing.new('foo')

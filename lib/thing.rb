@@ -16,6 +16,10 @@ class Thing
     @@things = []
   end
 
+  def self.sort()
+    @@things.sort_by! { |obj| obj.ranking }
+  end
+
   def save()
     @@things.push(self)
   end

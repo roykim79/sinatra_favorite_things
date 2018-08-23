@@ -12,8 +12,10 @@ end
 
 post '/' do
   name = params.fetch('thing')
-  thing = Thing.new(name)
+  ranking = params.fetch('ranking')
+  thing = Thing.new(name, ranking)
   thing.save()
+  Thing.sort()
   @things = Thing.all()
   erb :list
 end
