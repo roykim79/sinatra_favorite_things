@@ -1,4 +1,4 @@
-# Sinatra Maze
+# Sinatra Favorite Things
 
 ## Author
 Roy Kim
