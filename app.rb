@@ -13,9 +13,14 @@ end
 post '/' do
   name = params.fetch('thing')
   ranking = params.fetch('ranking')
-  thing = Thing.new(name, ranking)
-  thing.save()
-  Thing.sort()
+  @string = nil
+  if (Thing.all.any? { |thing| thing.name == name}) | (Thing.all.any? { |thing| thing.ranking == ranking})
+    @string = 'Cant duplicate'
+  else
+    thing = Thing.new(name, ranking)
+    thing.save()
+    Thing.sort()
+  end
   @things = Thing.all()
   erb :list
 end
