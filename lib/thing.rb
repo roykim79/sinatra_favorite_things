@@ -17,7 +17,7 @@ class Thing
   end
 
   def self.sort()
-    @@things.sort_by! { |obj| obj.ranking }
+    @@things.sort_by!(&:ranking)
   end
 
   def save()
